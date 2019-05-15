@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5 New Form Elements</title>
+</head>
+<body onload="setDefaultValues()">
+    <h2>Form Elements</h2>
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <div>
+                <label>Name</label>
+                <input type="text" autofocus required pattern="[A-Za-z]{0,10}">
+            </div>
+            <br>
+            <div>
+                <label>DOB</label>
+                <input type="date" min="2019-05-06"  step="2" id="todayDate">
+            </div>
+            <br>
+            <div>
+                <label>Age</label>
+                <input type="number" min="18" max="50" step="5">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Professional Details</legend>
+            <div>
+                <lable>Email</lable>
+                <input type="email">
+            </div>
+            <br>
+            <div>
+                <label>Website</label>
+                <input type="url" >
+            </div>
+            <br>
+            <div>
+                <label>How was the session?</label>
+                <input type="range" min="0" max="10" step="5" list="scores">
+                <datalist id="scores">
+                    <option value="0">0</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>                    
+                </datalist>
+            </div>
+            <br>
+            <div>
+                <label>Color</label>
+                <input type="color">
+            </div>
+            <br>
+            <div>
+                <label>Progress Bar</label>
+                <progress min="0" max="100" value="5"></progress>
+            </div>
+           <br>
+            <div>
+                <label>Select you location</label>
+                <input type="text" list="citynames">
+                <datalist id="citynames">
+                    <option value="Chennai">Chennai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Mangalore">Mangalore</option>
+                </datalist>
+            </div>
+
+            <br>
+            <div>
+                <label>Choose File</label>
+                <input type="file">
+            </div>
+        </fieldset>
+        <br>
+        <button type="save" formnovalidate>Save</button>
+        <br>
+        <button type="submit" >Submit</button>
+    </form>
+    <script>
+    var setDefaultValues=function(){
+        //document.getElementById("todayDate").valueAsDate= new Date()
+        document.getElementById("todayDate").max=new Date().toISOString().split("T")[0]
+    }
+    </script>
+</body>
+</html>

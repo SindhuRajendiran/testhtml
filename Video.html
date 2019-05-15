@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <tilte>HTML5</tilte>
+    </head>
+    <body>
+        <h1>Welcome to HTML5</h1>
+        <h2>Sample Audio</h2>
+        <audio id="myaudio" controls>
+            <source src="SampleMp3.mp3">
+        </audio>
+        <br>
+        <button id="audioplay" onclick="playAudio()">Audio Play</button>
+        <button id="audiopause" onclick="pauseAudio()"disabled=true>Audio Pause</button>
+        <h2>Sample Video</h2>
+        <video id="myvideo" width="400" controls loop muted>
+          <source src="SampleVideo.mp4" >                   
+        </video> 
+        <br>       
+         <button id="playButton" onclick="videoPlay()">Play</button> 
+          
+         <button id="pauseButton" onclick="videoPause()" disabled=true>Pause</button>
+         <h2>YouTube Video</h2>              
+        <!--<iframe src="https://www.youtube.com/embed/2hFxY27Fhe8" width="400"></iframe>  -->
+    <script>   
+    var videoref=document.getElementById("myvideo")
+    var playref=document.getElementById("playButton")
+    var pauseref=document.getElementById("pauseButton")
+    var audioref=document.getElementById("myaudio")
+    var audioplayref=document.getElementById("audioplay")
+    var audiopauseref=document.getElementById("audiopause")
+    var videoPlay=function(){
+     console.log("Hello from Video Play")
+     videoref.play()
+     playref.disabled=true 
+     pauseref.disabled=false    
+    } 
+    var videoPause=function(){
+        console.log("Hello from video pause")
+        videoref.pause()
+        pauseref.disabled=true
+        playref.disabled=false
+    }   
+    var playAudio=function(){
+    console.log("Hello from Audio play")
+    audioref.play()
+    audiopauseref.disabled=false
+    audioplayref.disabled=true
+    }
+    var pauseAudio=function(){
+    console.log("Hello from Audio Pause")
+    audioref.pause()
+    audioplayref.disabled=false
+    audiopauseref.disabled=true
+    }
+    </script>
+   </body>
+</html>
